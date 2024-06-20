@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('coments', function (Blueprint $table) {
+        Schema::create('historis', function (Blueprint $table) {
             $table->id();
+            $table->foreignid (column:"User_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignid (column:"Zalaz_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignid (column:"Zakaz_Statys")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('coments');
+        Schema::dropIfExists('historis');
     }
 };

@@ -22,4 +22,6 @@ class Tovar extends Model
         'photo',
     ];
 
+    
+
 }
